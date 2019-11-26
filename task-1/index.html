@@ -11,9 +11,9 @@
     <article id="p-1">
         <aside>
             <nav>
-                <div class='selected'></div>
-                <div></div>
-                <div></div>
+                <a href=""><div class='selected'></div></a>
+                <a href="#p-2"><div></div></a>
+                <a href="#p-3"><div></div></a>
             </nav>
         </aside>
         <div class="wrapper">
@@ -46,9 +46,9 @@
     <article id="p-2">
         <aside>
             <nav>
-                <div></div>
-                <div class='selected'></div>
-                <div></div>
+                <a href="#p-1"><div></div></a>
+                <a href=""><div class='selected'></div></a>
+                <a href="#p-3"><div></div></a>
             </nav>
         </aside>
         <div class="wrapper">
@@ -58,70 +58,55 @@
             </header>
             <h3>Зарегистрировав у нас домен, вы получите</h3>
             <div class="grid-container">
-                <section>
+                <section id="website">
                     <div class="box">
-                        <a href="">
                             <img src="./img/2/site-cutaway.png" alt="">
                             <h4>Cайт-визитка</h4>
-                        </a>
                     </div>
                 </section>
-                <section>
+                <section id="dns-support">
                     <div class="box">
-                        <a href="#">
                             <img src="./img/2/dns.png" alt="">
                             <h4>Поддержка DNS</h4>
-                        </a>
                     </div>
                 </section>
-                <section>
+                <section id="certificate">
                     <div class="box">
-                        <a href="#">
                             <img src="./img/2/certificate.png" alt="">
                             <h4>Сертификат о владении доменом</h4>
-                        </a>
                     </div>
                 </section>
-                <section>
+                <section id="auto-completion">
                     <div class="box">
-                        <a href="#">
                             <img src="./img/2/auto.png" alt="">
                             <h4>Автодополнение</h4>
-                        </a>
                     </div>
                 </section>
-                <section>
+                <section id="cloud">
                     <div class="box">
-                        <a href="#">
                             <img src="./img/2/cloud.png" alt="">
                             <h4>Облачное хранилище на 20ГБ</h4>
-                        </a>
                     </div>
                 </section>
-                <section>
+                <section id="ssl">
                     <div class="box">
-                        <a href="#">
                             <img src="./img/2/SSL.png" alt="">
                             <h4>Бесплатный SSL-сертификат</h4>
-                        </a>
                     </div>
                 </section>
-                <section>
+                <section  id="dnssec">
                     <div class="box">
-                        <a href="#">
                             <img src="./img/2/key.png" alt="">
                             <h4>DNSSEC в один клик</h4>
-                        </a>
                     </div>
                 </section>
-                <section>
+                <section id="overpressure">
                     <div class="box">
-                        <a href="#">
                             <img src="./img/2/overpressure.png" alt="">
                             <h4>Перенаправление</h4>
-                        </a>
                     </div>
                 </section>
+                <p class="text"></p>
             </div>
             <button class="create-acc">Cоздать аккаунт</button>
         </div>
@@ -129,9 +114,9 @@
     <article id="p-3">
         <aside>
             <nav>
-                <div></div>
-                <div></div>
-                <div class='selected'></div>
+                <a href="#p-1"><div></div></a>
+                <a href="#p-2"><div></div></a>
+                <a href=""><div class='selected'></div></a>
             </nav>
         </aside>
         <div class="wrapper">
@@ -144,17 +129,17 @@
                 собственную панель управления<br> и многое другое.</h2>
             <button class="create-acc">Cоздать аккаунт</button>
             <div class="red-cont">
-                <p>Вы получите 1000 баллов в системе лояльности <u>Джино.Плюсы</u>,
+                <p>Вы получите 1000 баллов в системе лояльности <a>Джино.Плюсы</a>,
                     зарегистрировавшись в течении 24 часов после посещения данной страницы</p>
                 <h2>1000 +</h2>
             </div>
             <footer>
-                <p>© «<u>Джино</u>», 2003–2017. «Джино» является зарегистрированным товарным знаком. Лицензия на телематические
-                    услуги связи № 97495 от 09.03.2012. <u>Правовая информация.</u></p>
+                <p>© «<a>Джино</a>», 2003–2017. «Джино» является зарегистрированным товарным знаком. Лицензия на телематические
+                    услуги связи № 97495 от 09.03.2012. <a>Правовая информация.</a></p>
             </footer>
         </div>
     </article>
-    <script src="./node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
     <script src="./index.js"></script>
 </body>
 </html>

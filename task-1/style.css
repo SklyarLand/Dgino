@@ -7,16 +7,19 @@ body{
 }
 a{
     text-decoration: none;
-    color: initial;
+    cursor: pointer;
+    text-decoration: underline;
 }
 h1, h2, h3{
     font-weight: 700;
 }
 h1{
     font-size: 80px;
+    margin: 0 auto;
 }
 h2{
     font-size: 50px;
+    margin: 0 auto;
 }
 h3{
     font-size: 35px;
@@ -54,6 +57,9 @@ nav{
     display: grid;
     grid-template-columns: auto;
 }
+nav a{
+    z-index: 1;
+}
 nav div{
     width: 20px;
     height: 20px;
@@ -64,6 +70,7 @@ nav div.selected{
     background: url(./img/the-nav-point.png);
     background-size: contain;
 }
+
 #p-1{
     background: url(./img/background1.jpg) no-repeat;
     color: white;
@@ -155,33 +162,57 @@ form .bot a{
 }
 #p-2{
     color: #333333;
-    height: 100%;
     padding-bottom: 100px;
     min-height: 700px;
+
 }
 #p-2 h3{ padding-top: 100px;}
 #p-2 .grid-container{
     display: grid;
     grid-template-columns: repeat(4, 264px);
-    grid-template-rows: 179px 179px;
+    grid-template-rows: 179px 0px 179px 0px;
     column-gap: 12px;
     row-gap: 12px;
     margin-top: 50px;
+
 }
-.box a{
+#cloud, #ssl, #dnssec, #overpressure{
+    position: relative;
+    z-index: 9999;
+    grid-row: 3/4;
+}
+.text{
+    grid-column: 1/5;
+    display: none;
+    border: solid #bbbbbc;
+    border-radius: 10px;
+    margin: auto 0;
+    text-align: left;
+    padding:30px;
+}
+.text.text-active{
+    display: block;
+    background-color: #f7f7f7;
+    color: #4a4a4a;
+}
+.box{
+    cursor: pointer;
+}
+.box{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 2fr 1fr;
     column-gap: 12px;
     height: 100%;
+    position: relative;
 }
-.box a img{
+.box img{
     grid-column: 2;
     grid-row: 1;
     width: 100%;
     margin: auto 0;
 }
-.box a h4{
+.box h4{
     grid-row: 2;
     grid-column: 1/4;
     font-size: 20px;
@@ -225,6 +256,9 @@ form .bot a{
     padding: 34px 0;
     font-size: 14px;
 }
+#p-3 a{
+    text-decoration: underline;
+}
 
 
 
@@ -256,10 +290,20 @@ form .bot a{
     #p-3 .red-cont p{
         font-size: 18px;
     }
+    
+    #p-1 footer img{
+        height: 110px;
+    }
 }
 @media screen and ( max-width: 950px){
-    .wrapper{
-        width: 95%;
+    #auto-completion{
+        grid-row: 3/4;
+    }
+    #dnssec, #overpressure{
+    grid-row: 5/6;
+    }
+    #p-2 .grid-container{
+        grid-template-rows: repeat(3, 179px 0px);
     }
     h1{ 
         font-size: 60px; 
@@ -294,14 +338,21 @@ form .bot a{
     }
     #p-2 {
         height: auto;
-    }    
+    }  
+    
+    #p-1 footer img{
+        height: 100px;
+    }  
 }
 @media screen and ( max-width: 750px){
     h1{ 
         font-size: 45px; 
+        display: inline-block;
     }
     h2{ 
         font-size: 28px; 
+        display: inline-block;
+
     }
     h3{ 
         font-size: 20px; 
@@ -342,6 +393,15 @@ form .bot a{
     #subm-1{
         display: none;
     }
+    .text{
+        font-size: 14px;
+    }
+    #p-1 footer img{
+        height: 90px;
+    }
+    .wrapper{
+        width: 95%;
+    }
 }
 @media screen and ( max-width: 530px){
     .form-container form{
@@ -349,6 +409,15 @@ form .bot a{
         border-radius: 8px;
         height: 125px;
         grid-column: 2;
+    }
+    #certificate, #auto-completion{
+       grid-row: 3/4; 
+    }
+    #ssl, #cloud{
+       grid-row: 5/6; 
+    }
+    #dnssec, #overpressure{
+        grid-row: 7/8; 
     }
     #p-1 .form-container{
         margin: 35px auto;
@@ -363,18 +432,14 @@ form .bot a{
     h3{ 
         font-size: 16px; 
     }
-    .create-acc {
-        font-size: 20px;
-        padding: 10px 20px;
-        cursor: pointer;
-    }
     #p-2 .grid-container{
         grid-template-columns: repeat(2, minmax(120px , 1fr));
         grid-column-gap: 0;
+        grid-template-rows: repeat(4, 179px 0px);
     }
     aside {
         right: 10px;
-        top: 50%;
+        top: 10px;
     }
     #p-3 .red-cont {
         grid-template-columns: auto;
@@ -391,6 +456,10 @@ form .bot a{
         margin: auto 0;
         border-top: solid #e56e7e;
         border-left: none;
+        text-align: center;
+    }
+    #p-1 footer img{
+        height: 80px;
     }
 }
 @media screen and ( max-width: 400px){
@@ -410,5 +479,15 @@ form .bot a{
     }
     #p-1 footer img{
         height: 70px;
+    }
+    h1{
+        text-align: left;
+    }
+    h2{
+        text-align: left;
+    }
+    .create-acc {
+        font-size: 20px;
+        padding: 10px 20px;
     }
 }
